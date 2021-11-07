@@ -1,0 +1,22 @@
+<div class="todays">   
+    <div class="data-title">
+        <h3><%= data[0].place %></h3>
+        <h4><%= data[0].current.date %></h4>
+    </div>
+    <div class="data-total">
+    
+        <div id="main-desc">
+            <div class="icon"><img src="https://openweathermap.org/img/wn/<%=data[1].daily[0].forecast.icon%>@2x.png" id="icon" alt="" ></div>
+            <p><span><%= data[1].daily[0].forecast.description %></span></p>        
+        </div>
+        <p>Min Temp:&nbsp <span><%= data[1].daily[0].forecast.minTemp %></span></p>
+        <p>Max Temp:&nbsp <span><%= data[1].daily[0].forecast.maxTemp %></span></p>
+        <p>Sunrise:&nbsp <span><%= data[1].daily[0].forecast.sunrise %></span></p>        
+        <p>Sunset:&nbsp <span><%= data[1].daily[0].forecast.sunset %></span></p>        
+        <p>Moonrise:&nbsp <span><%= data[1].daily[0].forecast.moonrise %></span></p>        
+        <p>Moonset:&nbsp <span><%= data[1].daily[0].forecast.moonset %></span></p>        
+        <p>Clouds Coverage:&nbsp <span><%= data[1].daily[0].forecast.cloudsCoverage %></span></p>        
+        <p>Wind Speed:&nbsp <span><%= data[1].daily[0].forecast.windSpeed %></span></p>        
+        <p>Wind Degree:&nbsp <span><%= data[1].daily[0].forecast.windDeg %></span></p>        
+    </div> 
+</div>

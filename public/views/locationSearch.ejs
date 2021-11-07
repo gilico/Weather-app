@@ -1,0 +1,41 @@
+<html lang="en">
+    <%- include('partials/head.ejs') %>
+</head>
+<body>
+    <div class="wrapper">
+        <%- include('partials/header.ejs') %>
+
+        <form method="POST" action="/search">
+            
+            <h2 class="form-title"><%= formtitle %></h2>
+            <input type="text" name="place" placeholder="type location">
+            
+            <button>search</button>
+        </form>
+
+        <%- include('partials/days-options.ejs') %>
+
+        <% if(data !== undefined && data !== null){ %>
+            <div class="data-container five-days-forecast">
+                
+                <div id="type-curr" class="weather-data">
+                    <%- include('partials/current-weather.ejs') %>
+                </div>
+                <div id="type-today" class="weather-data">
+                    <%- include('partials/todays-forecast.ejs') %>
+                </div>
+                <div id="type-five" class="weather-data">
+                    <%- include('partials/five_forecast.ejs') %>
+                </div>
+            </div>
+
+        <% } else if(data === null ) { %>
+
+            <h4 id="note">Can't find what you're looking for...</h4>
+
+        <% } %>
+        <footer style="height: 30px;"></footer>
+    </div>
+    <script src="../scripts/switchForecast.js"></script>
+</body>
+</html>

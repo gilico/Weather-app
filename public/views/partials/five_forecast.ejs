@@ -1,0 +1,38 @@
+<div class="days five-change-opt" id="days-to-choose">
+    <% for(var i=0; i < 5 ; i++) {%>
+        <div class="day" onclick="SetDayForecast(this)" id="<%=i%>"">
+            <p><%= data[1].daily[i].forecast.date %></p>
+            <div class="icon"><img src="https://openweathermap.org/img/wn/<%=data[1].daily[i].forecast.icon%>@2x.png" id="icon" alt="" ></div>
+            <p><%= data[1].daily[i].forecast.description %></p>
+        </div>
+    <% } %>
+</div>
+
+<div class="every-day-data todays">
+    <div class="data-total-five">
+        <% for(var i=0; i < 5 ; i++) {%>
+
+            <div class="five-change-cont">
+                <div class="data-title">
+                    <h3><%= data[0].place %></h3>
+                    <h4><%= data[1].daily[i].forecast.date %></h4>
+                </div>
+                <div class="output-cont">
+                    <p id=i class="output">Min Temp:&nbsp <span><%= data[1].daily[i].forecast.minTemp %></span></p>
+                    <p id=i class="output">Max Temp:&nbsp <span><%= data[1].daily[i].forecast.maxTemp %></span></p>
+                    <p id=i class="output">Sunrise:&nbsp <span><%= data[1].daily[i].forecast.sunrise %></span></p>        
+                    <p id=i class="output">Sunset:&nbsp <span><%= data[1].daily[i].forecast.sunset %></span></p>        
+                    <p id=i class="output">Moonrise:&nbsp <span><%= data[1].daily[i].forecast.moonrise %></span></p>        
+                    <p id=i class="output">Moonset:&nbsp <span><%= data[1].daily[i].forecast.moonset %></span></p>        
+                    <p id=i class="output">Clouds Coverage:&nbsp <span><%= data[1].daily[i].forecast.cloudsCoverage %></span></p>        
+                    <p id=i class="output">Wind Speed:&nbsp <span><%= data[1].daily[i].forecast.windSpeed %></span></p>        
+                    <p id=i class="output">Wind Degree:&nbsp <span><%= data[1].daily[i].forecast.windDeg %></span></p>
+                </div>
+        </div>
+        <% } %>
+    </div>
+    
+</div>
+
+
+<script src="../../scripts/fiveDaysScript.js"></script>

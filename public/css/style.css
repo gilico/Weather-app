@@ -1,0 +1,428 @@
+*{
+    box-sizing: border-box;
+    user-select:none;
+}
+
+body{
+    padding: 15px 0;
+    background-color: rgb(255, 255, 255);
+    font-family:cursive;
+}
+html{
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color:transparent;
+}
+button{
+    font-family:cursive;
+    letter-spacing: 1px;
+}
+
+.wrapper{
+    width: 85%;
+    height: 98%;
+    margin: 0 auto;
+    text-align: center;
+}
+header a, ul, h2{
+    color: rgb(32, 32, 32);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+header a:hover{
+    color: rgb(113, 0, 0);
+}
+
+
+/*----HEADER-----*/
+header{
+    margin-top: -15px;
+}
+header h1{
+    font-size: 3em;
+    background: linear-gradient(to right, yellow, rgb(206, 134, 0), rgb(113, 0, 0), rgb(206, 134, 0), yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: -10px;
+}
+nav{
+    height:fit-content;
+    margin-bottom: -5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+
+}
+nav ul{
+    display: flex;
+    justify-content: center; 
+    width: 95%;
+}
+nav li{
+    list-style-type: none;
+
+}
+
+nav li:not(:first-child){
+    margin-left: 20px;
+}
+
+nav .onpage{
+    color: rgb(113, 0, 0);
+}
+
+/*----FORM-----*/
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+form > * {
+    height: 30px;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+form input{
+    border-radius: 5px;
+    border: none;
+    padding-left: 8px;
+    background-color: rgb(237, 244, 255);
+    border-bottom: 2px solid rgb(186, 186, 186);
+    text-align: left;
+}
+form input:focus{
+    outline: none;
+}
+
+
+form button{
+    border-radius: 15px;
+    width: 120px;
+    cursor: pointer;
+    background:  rgb(169, 68, 0);
+    color: rgb(255, 255, 199);
+    border: 2px solid orange;
+}
+
+.weather-type{
+    /* position: absolute; */
+    margin-top: -30px;
+    margin-bottom: -30px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.weather-type > *{
+    margin: 15px;
+    display: block;
+    background-color: rgb(0, 30, 83);
+    width: 170px;
+    border: 1px solid black;
+    color: white;
+    height: 32px;
+    line-height: 30px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.weather-type .chosen-opt{
+    border: 2px solid yellow;
+}
+button#refForecast{
+    background-color: greenyellow;
+    font-size: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+/*------ data container----*/
+.data-container{
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.weather-data:not(:first-child){
+    display: none;
+}
+
+.line{
+    width: 80%;
+    /* border-bottom: 1px solid gray; */
+    margin: 0 auto;
+}
+.on{
+    display: none;
+}
+
+.current, .todays{
+    border: 4px solid rgb(72, 0, 0);
+    color: rgb(72, 0, 0);
+    font-weight: bold;
+    border-radius: 12px;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+
+.data-title h3{
+    font-size: 28px;
+    margin-bottom: -30px;
+    margin-top: 0;
+}
+
+.data-title h4{
+    font-size: 25px;
+    font-style: italic;
+}
+
+.temp{
+    margin: auto;
+    margin-bottom: -25px;
+    height: 150px;
+    width: 150px;
+    background-color: rgb(6, 175, 213);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.temp p{
+    font-size: 45px;
+}
+.description{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10px;
+}
+.description p{
+    font-size: 28px;
+}
+.icon{
+    width: 50px;
+} 
+
+.errNote p, #note{
+    color: black;
+    font-size: 25px;
+    margin-top: 100px;
+}
+
+
+
+/*---current weather data style---*/
+.current{
+    background-color: rgb(140, 230, 255);
+    border-radius: 9px;
+}
+.data-total{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.data-total > *:not(:first-child) {
+    width: 47%;
+}
+.data-total p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.data-total p img{
+    width: 30px;
+    margin-right: 10px;
+}
+
+
+#main-desc{
+    font-size: 20px;
+    width: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main-desc > p, output {
+    margin-left: 45px ;
+    margin-top: 10px;
+}
+
+.data-total span{
+    color: blue;
+}
+.todays .data-total{
+    margin-top: -50px;
+}
+/* .todays .data-total > *:not(:first-child, :last-child, :nth-child(10)){
+    border-bottom: 1px solid black;
+} */
+.todays .data-total > *:not(:first-child){
+    margin-top: -5px;
+}
+
+/*----five-days----*/
+.five-days-forecast{
+    width: 96%;
+}
+.every-day-data{
+    border: 4px solid rgb(72, 0, 0);
+    display: block;
+    margin-bottom: 50px;
+}
+.five-days-forecast .days{
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+}
+#five > a {
+    text-decoration: none;
+    color: white;
+}
+
+.five-days-forecast .day{
+    margin: 0 auto;
+    height: 90px;
+    width: 19%;
+    margin-bottom: -15px;
+    margin-top: -10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/*days class by weather*/
+.clouds{
+    background-color: rgb(194, 194, 194);
+}
+.sunny{
+    background-color: rgb(119, 210, 255);
+}
+.rainy{
+    background-color: rgb(111, 111, 111);
+    color: white;
+}
+.snow{
+    background-color: rgb(0, 12, 140);
+    color: white;
+}
+/**/
+
+
+.five-days-forecast .chosen{
+    border: 3px solid rgb(32, 32, 32);
+} 
+.day p{
+    margin-top: 2px;
+    margin-bottom: -10px;
+}
+.day .icon{
+    margin: 0 auto;
+    margin-bottom: -10px;
+}
+
+.day .icon img{
+    width: 50px;
+}
+
+.output-cont{    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+}
+.output-cont p:not(:last-child){
+    width: 48%;
+}
+.output-cont p{
+    margin-top: -10px;
+}
+
+
+.output-cont p span{
+    color:blue
+}
+
+
+
+
+@media screen and (max-width: 641px) {
+   header h1{
+       font-size: 7vw;
+   }
+
+   nav li a{
+    font-size: 10px;
+    width: 98%;
+    }
+
+    form{
+        display: block;
+    }
+    form > * {
+        margin-top: 12px;
+    }
+    .weather-type > *{
+        margin: 5px;
+        margin-top: 30px;
+        width: 30%;
+        font-size: 10px;
+        line-height: 30px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    button#refForecast{
+        font-size: 15px;
+    }
+
+    .current, .todays{
+        width: 100%;
+    }
+    .data-title{
+        margin-bottom: -30px;
+    }
+    .data-title h3{
+        font-size:22px;
+    }
+    .data-title h4{
+        font-size: 18px;
+    }
+    .data-total p img{
+        display: none;
+    }
+    .data-total p, .data-total-five p{
+        font-size: 12px;
+    }
+    .five-days-forecast .days{
+        margin-bottom: -10px;  
+    }
+
+    .five-days-forecast .day{
+        margin: 0 auto;
+        height: 70px;
+        width: 30%;
+        margin-bottom: 10px;
+       font-size: 10px;
+    }
+    .five-days-forecast .day > *:last-child{
+       margin-top: -13px;
+    }
+
+    .output-cont > p{
+        margin-top: 0;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+    .output-cont p, .day p{
+        font-size: 12px;
+    }
+}

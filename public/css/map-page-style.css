@@ -1,0 +1,126 @@
+.content{
+    display: flex;
+    height: 70%;
+}
+.map-cont{
+    margin-top: 20px;
+    width: 50%;
+}
+.layers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -12px;
+}
+.layer{
+    margin:0 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    width: 150px;
+    border-radius: 12px;
+    height: 40px;
+    line-height: 38px;
+    
+}
+#map {
+    margin-top: 5%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 3px solid black;
+}
+
+.form-container{
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*----data-container-map----*/
+.data-container-map{
+    padding-top: 20px;
+}
+.map-page .weather-type{
+    margin-top: -15px;
+}
+.map-page .days{
+    font-size: 12px;
+}
+.map-page .days .day{
+   height: 75px;
+   margin-bottom: -20px;
+}
+
+.map-page .current, .map-page .todays, .map-page .every-day-data{
+    width: 80%;
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    .content{
+        display: inline;
+    }
+    .map-cont{
+        margin: 30px auto;
+        height: 50%;
+        width: 70%;
+    }
+    .data-container-map{
+        margin-top: 93px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .map-page .output-cont output,.map-page .data-total p{
+        font-size: 12px;
+    }   
+    .map-page .five-change-cont p{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 680px) {
+    .map-page .data-title h4{
+        margin-top: 35px;
+    }
+
+    .map-page .five-days-forecast .days{
+        margin-bottom: -10px;  
+    }
+    
+    .map-page .five-days-forecast .day{
+        margin: 0 auto;
+        height: 68px;
+        width: 30%;
+        margin-bottom: 10px;
+       font-size: 10px;
+    }
+    .map-page .data-total-five p{
+        font-size: 10px;
+    }
+    .layers{
+        margin-bottom: 0;
+
+    }
+
+    .layer{
+        font-size: 12px;
+        height: 30;
+        line-height: 28px;
+        width: 100%;
+        border-radius: 5px;
+    }
+
+    .map-cont{
+        height: 50%;
+        width: 95%;
+    }
+
+}

@@ -1,0 +1,46 @@
+<html lang="en">
+    <%- include('partials/head.ejs') %>
+<body>
+    <div class="wrapper">
+        <%- include('partials/header.ejs') %>
+        <form method="POST" action="/">
+            <h2 class="form-title"><%= formtitle %></h2>
+            <input type="text" name="place" placeholder="type location" class="place">
+            <input type="hidden" name="hidden" id="user-input" >
+            <button onclick="SetHiddenInputVal()">search</button>
+        </form>
+
+        <% if(data !== undefined && data !== null) { %>
+            <div class="data-container">
+                <div class="data-title">
+                    <h3><%= data[0].place %></h3>
+                    <h4><%= data[0].current.date %></h4>
+                </div>
+    
+                <div class="temp">
+                    <p><%= data[0].current.temp %></p>
+                </div>
+                
+                <div class="description">
+                    <p><%= data[0].current.description %></p>
+                </div>
+                
+                <a href="/search"><button id="refForecast">Check Out The Forecast</button></a>
+    
+            <% } else if(data === null) { %>
+                <div class="errNote">
+                    <h3>Can't find what you're looking for...</h3>
+                </div>
+            <% } %>
+        </div>
+        <footer style="height: 20px;"></footer>
+    </div>
+    <script>
+        function SetHiddenInputVal(){
+            const shownInputVal = document.querySelector('input').value;
+            const hidden = document.getElementById('user-input');
+            hidden.value = shownInputVal;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Weather | <%= title %></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="../css/map-page-style.css">
+<body>
+    <div class="wrapper map-page">
+        <%- include('partials/header.ejs') %>
+        <div class="content">
+
+            <div class="map-cont">
+                <div class="layers">
+                    <div id="lyr0" class="layer" onclick="ChangeMapStyle(this)">Streets</div>
+                    <div id="lyr1" class="layer" onclick="ChangeMapStyle(this)">Outdoors</div>
+                    <div id="lyr2" class="layer" onclick="ChangeMapStyle(this)">Satellite</div>
+                </div>
+
+                <div id='map'></div>
+                
+                <div class="form-container">
+                    <form method="POST" action="/map">
+                        <input type="hidden" name="hidden1" id="send-center1">
+                        <input type="hidden" name="hidden2" id="send-center2">
+                        <button id="btn" onclick="SetHiddenInputVal(event)">Get Forecast</button>
+                    </form>
+                    <pre id="info"></pre>
+                </div>
+            </div>
+
+            <div class="data-container-map" >
+                <%- include('partials/days-options.ejs') %>
+
+                <% if(data !== undefined && data !== null){ %>
+                    <div class="data-container five-days-forecast">
+                        
+                        <div id="type-curr" class="weather-data">
+                            <%- include('partials/current-weather.ejs') %>
+                        </div>
+                        <div id="type-today" class="weather-data">
+                            <%- include('partials/todays-forecast.ejs') %>
+                        </div>
+                        <div id="type-five" class="weather-data">
+                            <%- include('partials/five_forecast.ejs') %>
+                        </div>
+                    </div>
+        
+                <% } else if(data === null ) { %>
+        
+                    <h4 id="note">Can't find what you're looking for...</h4>
+        
+                <% } %>
+            </div>
+        </div>
+        <footer style="height: 30px;"></footer>
+    </div>
+
+    <script src="../scripts/switchForecast.js"></script>
+    <script src="../scripts/mapScript.js"></script>
+</body>
+</html>

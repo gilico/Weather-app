@@ -1,0 +1,17 @@
+<div class="current">
+    <div class="data-title">
+        <h3><%= data[0].place %></h3>
+        <h4><%= data[0].current.date %></h4>
+    </div>
+    
+    <div class="data-total">
+        <div id="main-desc">
+            <div class="icon"><img src="https://openweathermap.org/img/wn/<%=data[0].current.icon%>@2x.png" id="icon" alt="" ></div>
+            <p><span><%= data[0].current.description %></span></p>        
+        </div>
+        <p><img src="../../images/tmp.png">Temp:&nbsp <span><%= data[0].current.temp %></span></p>
+        <p><img src="../../images/wing.png"> Wind Speed:&nbsp <span><%= data[0].current.windSpeed %></span></p>        
+        <p><img src="../../images/deg.png">Wind Degree:&nbsp <span><%= data[0].current.windDeg %></span></p>        
+        <p><img src="../../images/clouds.png"> Clouds Coverage:&nbsp <span><%= data[0].current.cloudsCoverage %></span></p>        
+    </div>    
+</div>  
